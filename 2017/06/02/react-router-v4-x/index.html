@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://tangzhenh.com">
   <title>react-router_v4.x 使用 | ^_^</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在 web 应用开发中，路由系统是不可或缺的一部分。当浏览器的 URL 发生变化时，意味着用户产生了新的请求, 路由系统会根据请求资源的路径, 将这些请求分发给与之对应的服务进行处理.">
+  <meta name="description" content="传统 Web 开发方式在传统的网页应用架构中，用户通过浏览器, 将请求发送给服务端.在服务端有一个叫控制器的东西, 负责统一处理前端的请求, 其中就包含了路由的分发. 控制器中维护了一套路由列表, 里面配置的是, 请求路径与服务方法的映射关系. 当控制器接收到用户请求之后, 根据请求的路径, 调用与之对应的服务方法. 服务再根据某些业务规则,完成数据的处理, 最后生成新的页面返回给浏览器.  比如">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-router_v4.x 使用">
 <meta property="og:url" content="http://tangzhenh.com/2017/06/02/react-router-v4-x/index.html">
 <meta property="og:site_name" content="^_^">
-<meta property="og:description" content="在 web 应用开发中，路由系统是不可或缺的一部分。当浏览器的 URL 发生变化时，意味着用户产生了新的请求, 路由系统会根据请求资源的路径, 将这些请求分发给与之对应的服务进行处理.">
-<meta property="og:updated_time" content="2017-06-02T09:22:57.000Z">
+<meta property="og:description" content="传统 Web 开发方式在传统的网页应用架构中，用户通过浏览器, 将请求发送给服务端.在服务端有一个叫控制器的东西, 负责统一处理前端的请求, 其中就包含了路由的分发. 控制器中维护了一套路由列表, 里面配置的是, 请求路径与服务方法的映射关系. 当控制器接收到用户请求之后, 根据请求的路径, 调用与之对应的服务方法. 服务再根据某些业务规则,完成数据的处理, 最后生成新的页面返回给浏览器.  比如">
+<meta property="og:updated_time" content="2017-06-02T09:29:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-router_v4.x 使用">
-<meta name="twitter:description" content="在 web 应用开发中，路由系统是不可或缺的一部分。当浏览器的 URL 发生变化时，意味着用户产生了新的请求, 路由系统会根据请求资源的路径, 将这些请求分发给与之对应的服务进行处理.">
+<meta name="twitter:description" content="传统 Web 开发方式在传统的网页应用架构中，用户通过浏览器, 将请求发送给服务端.在服务端有一个叫控制器的东西, 负责统一处理前端的请求, 其中就包含了路由的分发. 控制器中维护了一套路由列表, 里面配置的是, 请求路径与服务方法的映射关系. 当控制器接收到用户请求之后, 根据请求的路径, 调用与之对应的服务方法. 服务再根据某些业务规则,完成数据的处理, 最后生成新的页面返回给浏览器.  比如">
   
     <link rel="alternative" href="/atom.xml" title="^_^" type="application/atom+xml">
   
@@ -173,9 +173,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在 <code>web</code> 应用开发中，路由系统是不可或缺的一部分。当浏览器的 <code>URL</code> 发生变化时，意味着用户产生了新的请求, 路由系统会根据请求资源的路径, 将这些请求分发给与之对应的服务进行处理.</p>
-<a id="more"></a>
-<h3 id="传统-Web-开发方式"><a href="#传统-Web-开发方式" class="headerlink" title="传统 Web 开发方式"></a>传统 Web 开发方式</h3><p>在传统的网页应用架构中，用户通过浏览器, 将请求发送给服务端.<br>在服务端有一个叫控制器的东西, 负责统一处理前端的请求, 其中就包含了路由的分发. 控制器中维护了一套路由列表, 里面配置的是, 请求路径与服务方法的映射关系. 当控制器接收到用户请求之后, 根据请求的路径, 调用与之对应的服务方法. 服务再根据某些业务规则,完成数据的处理, 最后生成新的页面返回给浏览器. </p>
+        <h3 id="传统-Web-开发方式"><a href="#传统-Web-开发方式" class="headerlink" title="传统 Web 开发方式"></a>传统 Web 开发方式</h3><p>在传统的网页应用架构中，用户通过浏览器, 将请求发送给服务端.<br>在服务端有一个叫控制器的东西, 负责统一处理前端的请求, 其中就包含了路由的分发. 控制器中维护了一套路由列表, 里面配置的是, 请求路径与服务方法的映射关系. 当控制器接收到用户请求之后, 根据请求的路径, 调用与之对应的服务方法. 服务再根据某些业务规则,完成数据的处理, 最后生成新的页面返回给浏览器. </p>
 <p>比如, 当用户请求 <code>/users/login</code> 时, 控制器在路由列表中匹配到这个路径, 同时调用 <code>loginService</code> 方法进行业务处理, 处理完成之后, 将处理完成之后的数据加上页面返回给浏览器端. 浏览器直接拿到页面后完成渲染. </p>
 <p>在这样的架构中, 浏览器实际上就只是一个展示数据的地方, 路由配置, 服务的调用, 以及页面跳转的流程都是由服务端来完成. </p>
 <p>以上是传统的网页应用方式, 可以看到, 在这种方式下, 开发的重心都偏向于服务端, 浏览器只是用于数据的展示. 而且, 当页面数据需要更新时, 会刷新整个页面, 这会导致资源的浪费.</p>
@@ -192,7 +190,7 @@
 <p>下面, 我们根据 <code>hash</code> 属性, 来创建一个基础的路由系统.</p>
 <p>我们需要在 <code>index.html</code> 页面中完成登录界面, 注册界面和信息界面的相互切换. </p>
 <p>首先看一下<code>url</code>和视图之间的映射关系: </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">http:<span class="comment">//www.example.com/index.html/#login 访问登录界面</span></div><div class="line">http:<span class="comment">//www.example.com/index.html/#reg   访问注册界面</span></div><div class="line">http:<span class="comment">//www.example.com/index.html/#info  访问信息界面</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">http://www.example.com/index.html/#login 访问登录界面</div><div class="line">http://www.example.com/index.html/#reg   访问注册界面</div><div class="line">http://www.example.com/index.html/#info  访问信息界面</div></pre></td></tr></table></figure>
 <ul>
 <li><code>#login</code>用来标志访问登录界面, <code>#reg</code>表示注册界面, <code>#info</code>则是信息界面</li>
 <li>首先在<code>index.html</code>页面中, 添加一个<code>div</code>, 作为视图容器. 当用户访问不同的<code>url</code>时, 容器就显示对应的视图. </li>
@@ -200,7 +198,7 @@
 <li>最后, 添加事件监听. 在<code>HTML 5</code>中, 新增了一个 <code>onhashchange</code> 的事件, 当 <code>hash</code> 值发生改变时, 就会触发这个事件. 这里, 我们添加这个事件, 当事件触发时, 调用路由处理函数.</li>
 <li>打开浏览器, 刷新页面, 修改<code>hash</code>值, 这时, 页面会随着<code>url</code>的改变切换到与之对应的视图.</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">router</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">const</span> hash = location.hash</div><div class="line">	<span class="keyword">switch</span>(hash) &#123;</div><div class="line">		<span class="keyword">case</span> <span class="string">"#login"</span>:</div><div class="line">			app.innerHTML = <span class="string">`&lt;h1&gt;登录界面&lt;/h1&gt;`</span></div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">"#reg"</span>:</div><div class="line">			app.innerHTML = <span class="string">`&lt;h1&gt;注册界面&lt;/h1&gt;`</span></div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">"#info"</span>:</div><div class="line">			app.innerHTML = <span class="string">`&lt;h1&gt;信息界面&lt;/h1&gt;`</span></div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		<span class="keyword">default</span>:</div><div class="line">			app.innerHTML = <span class="string">`&lt;h1&gt;信息界面&lt;/h1&gt;`</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">router()</div><div class="line"></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"hashchange"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	router()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">router</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">const</span> hash = location.hash</div><div class="line">	<span class="keyword">switch</span>(hash) &#123;</div><div class="line">		<span class="keyword">case</span> <span class="string">"#login"</span>:</div><div class="line">			app.innerHTML = <span class="string">`&lt;h1&gt;登录界面&lt;/h1&gt;`</span></div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">"#reg"</span>:</div><div class="line">			app.innerHTML = <span class="string">`&lt;h1&gt;注册界面&lt;/h1&gt;`</span></div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">"#info"</span>:</div><div class="line">			app.innerHTML = <span class="string">`&lt;h1&gt;信息界面&lt;/h1&gt;`</span></div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		<span class="keyword">default</span>:</div><div class="line">			app.innerHTML = <span class="string">`&lt;h1&gt;信息界面&lt;/h1&gt;`</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">router()</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"hashchange"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	router()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>以上就是通过 <code>hash</code> 属性, 创建的一个最简单的路由系统.</p>
 <p>除了 <code>hash</code> 属性之外, 我们还可以通过<code>HTML5</code>中的<code>history API</code>来创建路由系统.</p>
 <h4 id="2-HTML-5-history"><a href="#2-HTML-5-history" class="headerlink" title="2. HTML 5 history"></a>2. HTML 5 history</h4><p>在<code>HTML 5</code>中, 我们可以使用<code>pushState</code>方法来实现路由. </p>
