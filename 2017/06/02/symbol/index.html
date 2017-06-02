@@ -5,16 +5,16 @@
   
   <title>symbol | ^_^</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在`js`中, 我们可以随意的给对象添加属性或方法, 这种操作对象的方式, 很容易会产生属性名冲突的情况. 这时, 利用`Symbol`的特性, 就可以给对象添加独一无二的属性了.">
+  <meta name="description" content="1. Symbol 是个啥?ES6 规范之前, JavaScript 一共有六种数据类型, 分别为 String, Number, Boolean, null, undefined 和 Object(引用类型).在ES6中,新增了一种数据类型 Symbol, 用来表示独一无二的值.在js中, 我们可以随意的给对象添加属性或方法, 这种操作对象的方式, 很容易会产生属性名冲突的情况. 这时, 利用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="symbol">
 <meta property="og:url" content="http://tangzhenh.com/2017/06/02/symbol/index.html">
 <meta property="og:site_name" content="^_^">
-<meta property="og:description" content="在`js`中, 我们可以随意的给对象添加属性或方法, 这种操作对象的方式, 很容易会产生属性名冲突的情况. 这时, 利用`Symbol`的特性, 就可以给对象添加独一无二的属性了.">
-<meta property="og:updated_time" content="2017-06-02T08:37:30.000Z">
+<meta property="og:description" content="1. Symbol 是个啥?ES6 规范之前, JavaScript 一共有六种数据类型, 分别为 String, Number, Boolean, null, undefined 和 Object(引用类型).在ES6中,新增了一种数据类型 Symbol, 用来表示独一无二的值.在js中, 我们可以随意的给对象添加属性或方法, 这种操作对象的方式, 很容易会产生属性名冲突的情况. 这时, 利用">
+<meta property="og:updated_time" content="2017-06-02T08:39:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="symbol">
-<meta name="twitter:description" content="在`js`中, 我们可以随意的给对象添加属性或方法, 这种操作对象的方式, 很容易会产生属性名冲突的情况. 这时, 利用`Symbol`的特性, 就可以给对象添加独一无二的属性了.">
+<meta name="twitter:description" content="1. Symbol 是个啥?ES6 规范之前, JavaScript 一共有六种数据类型, 分别为 String, Number, Boolean, null, undefined 和 Object(引用类型).在ES6中,新增了一种数据类型 Symbol, 用来表示独一无二的值.在js中, 我们可以随意的给对象添加属性或方法, 这种操作对象的方式, 很容易会产生属性名冲突的情况. 这时, 利用">
   
     <link rel="alternate" href="/atom.xml" title="^_^" type="application/atom+xml">
   
@@ -85,7 +85,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-Symbol-是个啥"><a href="#1-Symbol-是个啥" class="headerlink" title="1. Symbol 是个啥?"></a>1. Symbol 是个啥?</h2><p><code>ES6</code> 规范之前, <code>JavaScript</code> 一共有六种数据类型, 分别为 <code>String</code>, <code>Number</code>, <code>Boolean</code>, <code>null</code>, <code>undefined</code> 和 <code>Object</code>(引用类型).在<code>ES6</code>中,新增了一种数据类型 <code>Symbol</code>, 用来表示独一无二的值.<br>在<code>js</code>中, 我们可以随意的给对象添加属性或方法, 这种操作对象的方式, 很容易会产生属性名冲突的情况. 这时, 利用<code>Symbol</code>的特性, 就可以给对象添加独一无二的属性了.</p>
+        <a id="more"></a>
+<h2 id="1-Symbol-是个啥"><a href="#1-Symbol-是个啥" class="headerlink" title="1. Symbol 是个啥?"></a>1. Symbol 是个啥?</h2><p><code>ES6</code> 规范之前, <code>JavaScript</code> 一共有六种数据类型, 分别为 <code>String</code>, <code>Number</code>, <code>Boolean</code>, <code>null</code>, <code>undefined</code> 和 <code>Object</code>(引用类型).在<code>ES6</code>中,新增了一种数据类型 <code>Symbol</code>, 用来表示独一无二的值.<br>在<code>js</code>中, 我们可以随意的给对象添加属性或方法, 这种操作对象的方式, 很容易会产生属性名冲突的情况. 这时, 利用<code>Symbol</code>的特性, 就可以给对象添加独一无二的属性了.</p>
 <h2 id="2-如何生成一个-Symbol-值"><a href="#2-如何生成一个-Symbol-值" class="headerlink" title="2. 如何生成一个 Symbol 值?"></a>2. 如何生成一个 Symbol 值?</h2><p><code>Symbol</code>是一个函数,如果我们想要得到一个<code>Symbol值</code>, 只需要调用该函数即可.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 创建symbol值</div><div class="line">const s1 = Symbol();</div><div class="line">const s2 = Symbol();</div></pre></td></tr></table></figure>
 <p><code>s1和s2</code>就是两个<code>Symbol值</code>. 每次<code>Symbol函数</code>调用,都会得到一个不同的<code>Symbol值</code>.</p>
@@ -127,7 +128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tangzhenh.com/2017/06/02/symbol/" data-id="cj3fli3hs00006knrjgv3odn5" class="article-share-link">Share</a>
+      <a data-url="http://tangzhenh.com/2017/06/02/symbol/" data-id="cj3flm2ad00017nnr6kpw99rt" class="article-share-link">Share</a>
       
       
     </footer>
